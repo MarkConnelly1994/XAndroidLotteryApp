@@ -38,8 +38,8 @@ namespace LotteryApp.Tests.ViewModels
             DateTime drawDate = new DateTime(2023, 5, 15);
             var expectedDraws = new List<LotteryDrawModel>
             {
-                new LotteryDrawModel { Id = "draw-1", DrawDate = drawDate, Number1 = 2 },
-                new LotteryDrawModel { Id = "draw-2", DrawDate = drawDate, Number1 = 5 }
+                new LotteryDrawModel { Id = "draw-1", DrawDate = drawDate.ToString(), Number1 = 2 },
+                new LotteryDrawModel { Id = "draw-2", DrawDate = drawDate.ToString(), Number1 = 5 }
             };
 
             _mockConnectivityService
