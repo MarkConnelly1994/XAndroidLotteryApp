@@ -3,5 +3,12 @@
     <color name="colorPrimary">#2c3e50</color>
     <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
+    <color name="primaryBackgroundColor">#E3E2C3</color>
+    <color name="primaryCardColor">#9D9B4A</color>
+    <color name="primaryTextColor">#FFFFFF</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="backgroundButtonColor">#9D9B4A</color>
+    <color name="primaryButtonTextColor">#FFEE8C</color>
+    <color name="splashBackgroundColor">#9D9B4A</color>
 </resources>
 

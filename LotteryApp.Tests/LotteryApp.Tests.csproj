@@ -20,9 +20,11 @@
   <ItemGroup>
     <None Remove="Core\" />
     <None Remove="Core\ViewModels\" />
+    <None Remove="Core\Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="Core\ViewModels\" />
+    <Folder Include="Core\Utils\" />
   </ItemGroup>
 </Project>
