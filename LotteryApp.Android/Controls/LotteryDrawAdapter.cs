@@ -7,6 +7,9 @@ using LotteryApp.Core.Models;
 
 namespace LotteryApp.Android.Controls
 {
+    /// <summary>
+    /// Lottery Adapter class.
+    /// </summary>
     public class LotteryDrawAdapter : BaseAdapter<LotteryDrawModel>
     {
         private readonly Activity _context;
@@ -18,12 +21,22 @@ namespace LotteryApp.Android.Controls
             _items = items;
         }
 
+        // Returns the model at the specified position in the list.
         public override LotteryDrawModel this[int position] => _items[position];
 
+        // Gets the total number of items in list.
         public override int Count => _items.Count;
 
+        // Returns the unique id for each item.
         public override long GetItemId(int position) => position;
 
+        /// <summary>
+        /// Gets the view for each item and binds the data to view.
+        /// </summary>
+        /// <param name="position">Position in list.</param>
+        /// <param name="convertView">Convert item</param>
+        /// <param name="parent">Parent</param>
+        /// <returns>View</returns>
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.lottery_draw_item, parent, false);

@@ -15,6 +15,9 @@ using LotteryApp.Core.Models;
 using LotteryApp.Android.Controls;
 using System.Collections.Generic;
 using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
+using AndroidX.Lifecycle;
+using LotteryApp.Core.ViewModels;
+using Android.Content;
 
 namespace LotteryApp.Android
 
@@ -23,11 +26,11 @@ namespace LotteryApp.Android
     public class MainActivity : AppCompatActivity
     {
         private ListView _lotteryListView;
-        private LotteryDataService _lotteryDataService;
-        private List<LotteryDrawModel> _lotteryDraws;
+        private LotteryPageViewModel _viewModel;
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
@@ -36,17 +39,31 @@ namespace LotteryApp.Android
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "ConneLotto";
 
-           
 
+
+            // Set up the ViewModel and ListView
             _lotteryListView = FindViewById<ListView>(Resource.Id.lotteryListView);
+            var lotteryDataService = new LotteryDataService(this);
+            _viewModel = new LotteryPageViewModel(lotteryDataService);
 
-            _lotteryDataService = new LotteryDataService(this);
-            _lotteryDraws = await _lotteryDataService.GetLotteryDrawsAsync();
+            await LoadDataAsync();
+        }
 
-            if (_lotteryDraws.Count > 0)
+        /// <summary>
+        /// Load the json data.
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadDataAsync()
+        {
+            await _viewModel.LoadLotteryDrawsAsync();
+            if (_viewModel.LotteryDraws.Count > 0)
             {
-                var adapter = new LotteryDrawAdapter(this, _lotteryDraws);
+                var adapter = new LotteryDrawAdapter(this, _viewModel.LotteryDraws);
                 _lotteryListView.Adapter = adapter;
+            }
+            else if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+            {
+                Toast.MakeText(this, _viewModel.ErrorMessage, ToastLength.Short).Show();
             }
             else
             {

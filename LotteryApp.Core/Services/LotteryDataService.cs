@@ -8,7 +8,10 @@ using Newtonsoft.Json;
 
 namespace LotteryApp.Core.Services
 {
-    public class LotteryDataService
+    /// <summary>
+    /// Lottery Data service.
+    /// </summary>
+    public class LotteryDataService : ILotteryDataService
     {
         private readonly Context _context;
 
@@ -17,9 +20,12 @@ namespace LotteryApp.Core.Services
             _context = context;
         }
 
+        /// <summary>
+        /// Get the lottery data from json.
+        /// </summary>
+        /// <returns>serialized json</returns>
         public async Task<List<LotteryDrawModel>> GetLotteryDrawsAsync()
         {
-            // Connectivity service check first.
             try
             {
                 using (var stream = _context.Assets.Open("LotteryData.json"))
@@ -32,12 +38,9 @@ namespace LotteryApp.Core.Services
             }
             catch (Exception ex)
             {
-                // Log or handle the exception
                 Console.WriteLine($"Error reading LotteryData.json: {ex.Message}");
                 return new List<LotteryDrawModel>();
             }
         }
     }
 }
-
-
