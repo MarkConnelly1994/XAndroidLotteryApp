@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LotteryApp.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a05f2c1031614e4a2a8537baea2682665af83c52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55be1533b26e1b0f8a13997d381ac909edb6b1ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("LotteryApp.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LotteryApp.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

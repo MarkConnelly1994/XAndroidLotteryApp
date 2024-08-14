@@ -25,7 +25,7 @@ namespace LotteryApp.Android
             var number5 = Intent.GetStringExtra("Number5");
             var number6 = Intent.GetStringExtra("Number6");
             var bonusBall = Intent.GetStringExtra("BonusBall");
-            var topPrize = Intent.GetLongExtra("TopPrize", 0);
+            var topPrize = Intent.GetStringExtra("TopPrize");
 
             // Set the values to the TextViews
             FindViewById<TextView>(Resource.Id.drawDateTextView).Text = drawDate;

@@ -7,6 +7,7 @@ using LotteryApp.Core.Services;
 using LotteryApp.Core.Utils;
 using LotteryApp.Core.Utils.LotteryApp.Core.Utils;
 using LotteryApp.Core.ViewModels;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -52,35 +53,65 @@ namespace LotteryApp.Android
 
         private async Task GenerateAndCompareNumbersAsync()
         {
-            // Clear previous numbers
             numberContainer.RemoveAllViews();
 
-            // Generate new random numbers using shared utility
+            var textColor = Context.GetColorStateList(Resource.Color.secondaryTextColor);
+
+            // Generate new random numbers.
             var randomNumbers = LotteryNumberGenerator.GenerateRandomNumbers(7, 1, 59);
 
-            // Display the numbers
-            foreach (var number in randomNumbers)
+            // Get the first 6 numbers, as the last is the bonus.
+            for (int i = 0; i < randomNumbers.Length - 1; i++)
             {
+                var number = randomNumbers[i];
+
                 var textView = new TextView(Context)
                 {
                     Text = number.ToString(),
-                    TextSize = 24f,
+                    TextSize = 16f,
                     Gravity = GravityFlags.Center
                 };
 
                 var layoutParams = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WrapContent,
-                    ViewGroup.LayoutParams.WrapContent
-                )
+                    120,
+                    120)
                 {
                     MarginStart = 16,
-                    MarginEnd = 16
+                    MarginEnd = 16,
+                    Gravity = GravityFlags.CenterHorizontal
                 };
+
+                textView.SetBackgroundResource(Resource.Drawable.circle_background);
+                textView.SetTextColor(textColor);
 
                 numberContainer.AddView(textView, layoutParams);
             }
 
-            // Compare with lottery data using shared ViewModel method
+            // Display the bonus number with a red circle.
+            var lastNumber = randomNumbers.Last();
+
+            var lastNumberTextView = new TextView(Context)
+            {
+                Text = lastNumber.ToString(),
+                TextSize = 16f,
+                Gravity = GravityFlags.Center
+            };
+
+            var lastNumberLayoutParams = new LinearLayout.LayoutParams(
+                120,
+                120)
+            {
+                TopMargin = 24,
+                Gravity = GravityFlags.CenterHorizontal
+            };
+
+            lastNumberTextView.SetBackgroundResource(Resource.Drawable.circle_red_background);
+
+            lastNumberTextView.SetTextColor(textColor);
+
+            numberContainer.AddView(lastNumberTextView, lastNumberLayoutParams);
+
+            // Compare with lottery data.
             await _viewModel.LoadLotteryDrawsAsync();
             var isWinner = _viewModel.LotteryDraws.Any(draw => LotteryNumberComparer.AreNumbersMatching(randomNumbers, draw));
 
