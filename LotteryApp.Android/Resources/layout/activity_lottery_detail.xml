@@ -21,7 +21,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="18sp"
-			android:textColor="@color/secondaryTextColor"
+			android:textColor="@color/primaryTextColor"
 			android:textStyle="bold"
 			android:layout_marginTop="8dp" />
 
@@ -30,7 +30,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="18sp"
-			android:textColor="@color/secondaryTextColor"
+			android:textColor="@color/primaryTextColor"
 			android:textStyle="bold"
 			android:text="Your lottery draw numbers:"
 			android:layout_marginTop="8dp" />
@@ -118,7 +118,7 @@
 				android:id="@+id/bonusBallTextViewPreface"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColor="@color/secondaryTextColor"
+				android:textColor="@color/primaryTextColor"
 				android:textSize="18sp"
 				android:text="Bonus Ball: "
 				android:textStyle="bold" />
@@ -135,15 +135,33 @@
 				android:text="10"/>
 		</LinearLayout>
 
-		<TextView
+	<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginTop="8dp"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/topPrizeTextViewPreface"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/primaryTextColor"
+				android:textSize="18sp"
+				android:text="Top Prize: "
+				android:textStyle="bold" />
+
+			<TextView
 			android:id="@+id/topPrizeTextView"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textColor="@color/secondaryTextColor"
+			android:textColor="@color/primaryTextColor"
 			android:textSize="16sp"
+		    android:gravity="center"
 			android:textStyle="italic"
 			android:layout_marginTop="4dp"
 			android:text="Top Prize" />
+		</LinearLayout>
 	</LinearLayout>
 
 </androidx.cardview.widget.CardView>
