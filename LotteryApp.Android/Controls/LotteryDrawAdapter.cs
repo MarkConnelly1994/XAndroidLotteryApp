@@ -1,8 +1,8 @@
 ﻿using Android.Content;
 using Android.Views;
+using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using LotteryApp.Core.Models;
-using System;
 using System.Collections.Generic;
 
 namespace LotteryApp.Android
@@ -27,6 +27,7 @@ namespace LotteryApp.Android
         {
             _lotteryDraws.Clear();
             _lotteryDraws.AddRange(newDraws);
+            NotifyDataSetChanged();  // Ensure the RecyclerView is updated when data changes
         }
 
         public override int ItemCount => _lotteryDraws.Count;
@@ -36,10 +37,23 @@ namespace LotteryApp.Android
             if (holder is LotteryDrawViewHolder viewHolder)
             {
                 var item = _lotteryDraws[position];
-                viewHolder.DrawDateTextView.Text = item.DrawDate.ToString();
-                viewHolder.DrawNumbersTextView.Text = $"{item.Number1}, {item.Number2}, {item.Number3}, {item.Number4}, {item.Number5}, {item.Number6}";
-                viewHolder.BonusBallTextView.Text = $"Bonus Ball: {item.BonusBall}";
-                viewHolder.TopPrizeTextView.Text = $"Top Prize: {item.TopPrize:C}";
+
+                // Set the date
+                viewHolder.DrawDateTextView.Text = item.DrawDate;
+
+                // Set the draw numbers
+                viewHolder.Number1TextView.Text = item.Number1.ToString();
+                viewHolder.Number2TextView.Text = item.Number2.ToString();
+                viewHolder.Number3TextView.Text = item.Number3.ToString();
+                viewHolder.Number4TextView.Text = item.Number4.ToString();
+                viewHolder.Number5TextView.Text = item.Number5.ToString();
+                viewHolder.Number6TextView.Text = item.Number6.ToString();
+
+                // Set the bonus ball with a label
+                viewHolder.BonusBallTextView.Text = item.BonusBall.ToString();
+
+                // Set the top prize with currency format
+                viewHolder.TopPrizeTextView.Text = $"£{item.TopPrize:n0}";
 
                 // Attach swipe gesture listener to the item view
                 var swipeListener = new OnSwipeTouchListener(_context);
@@ -75,8 +89,34 @@ namespace LotteryApp.Android
             intent.PutExtra("Number5", draw.Number5.ToString());
             intent.PutExtra("Number6", draw.Number6.ToString());
             intent.PutExtra("BonusBall", draw.BonusBall.ToString());
-            intent.PutExtra("TopPrize", draw.TopPrize);
+            intent.PutExtra("TopPrize", draw.TopPrize.ToString());
             _context.StartActivity(intent);
+        }
+    }
+
+    public class LotteryDrawViewHolder : RecyclerView.ViewHolder
+    {
+        public TextView DrawDateTextView { get; }
+        public TextView Number1TextView { get; }
+        public TextView Number2TextView { get; }
+        public TextView Number3TextView { get; }
+        public TextView Number4TextView { get; }
+        public TextView Number5TextView { get; }
+        public TextView Number6TextView { get; }
+        public TextView BonusBallTextView { get; }
+        public TextView TopPrizeTextView { get; }
+
+        public LotteryDrawViewHolder(View itemView) : base(itemView)
+        {
+            DrawDateTextView = itemView.FindViewById<TextView>(Resource.Id.drawDateTextView);
+            Number1TextView = itemView.FindViewById<TextView>(Resource.Id.number1TextView);
+            Number2TextView = itemView.FindViewById<TextView>(Resource.Id.number2TextView);
+            Number3TextView = itemView.FindViewById<TextView>(Resource.Id.number3TextView);
+            Number4TextView = itemView.FindViewById<TextView>(Resource.Id.number4TextView);
+            Number5TextView = itemView.FindViewById<TextView>(Resource.Id.number5TextView);
+            Number6TextView = itemView.FindViewById<TextView>(Resource.Id.number6TextView);
+            BonusBallTextView = itemView.FindViewById<TextView>(Resource.Id.bonusBallTextView);
+            TopPrizeTextView = itemView.FindViewById<TextView>(Resource.Id.topPrizeTextView);
         }
     }
 }
