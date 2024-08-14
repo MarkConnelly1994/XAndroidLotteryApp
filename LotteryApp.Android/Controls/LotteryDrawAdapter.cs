@@ -37,6 +37,7 @@ namespace LotteryApp.Android
                 var item = _lotteryDraws[position];
                 viewHolder.DrawDateTextView.Text = item.DrawDate.ToString();
                 viewHolder.DrawNumbersTextView.Text = $"{item.Number1}, {item.Number2}, {item.Number3}, {item.Number4}, {item.Number5}, {item.Number6}";
+                viewHolder.BonusBallTextView.Text = $"Bonus Ball: {item.BonusBall}";
                 viewHolder.TopPrizeTextView.Text = $"Top Prize: {item.TopPrize:C}";
 
                 // Attach swipe gesture listener to the item view

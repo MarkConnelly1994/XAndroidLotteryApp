@@ -35,7 +35,7 @@ namespace LotteryApp.Android
             FindViewById<TextView>(Resource.Id.number4TextView).Text = number4;
             FindViewById<TextView>(Resource.Id.number5TextView).Text = number5;
             FindViewById<TextView>(Resource.Id.number6TextView).Text = number6;
-            FindViewById<TextView>(Resource.Id.bonusBallTextView).Text = bonusBall;
+            FindViewById<TextView>(Resource.Id.bonusBallTextView).Text = $"Bonus Ball: {bonusBall}";
             FindViewById<TextView>(Resource.Id.topPrizeTextView).Text = $"Top Prize: {topPrize:C}";
         }
     }
