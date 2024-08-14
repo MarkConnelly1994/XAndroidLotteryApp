@@ -3,6 +3,9 @@ using LotteryApp.Core.Services;
 
 namespace LotteryApp.Android.Services
 {
+    /// <summary>
+    /// Save preferences for android.
+    /// </summary>
     public class PreferencesService : IPreferencesService
     {
         private readonly Context _context;

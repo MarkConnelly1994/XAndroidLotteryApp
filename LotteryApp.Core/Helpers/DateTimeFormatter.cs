@@ -5,14 +5,10 @@ public static class DateTimeFormatter
 {
     public static string FormatDate(string dateString)
     {
-        // Parse the input date string to a DateTime object
         DateTime date = DateTime.Parse(dateString);
 
-        // Get the day of the month and its ordinal suffix
         int day = date.Day;
         string dayWithSuffix = day + GetOrdinalSuffix(day);
-
-        // Format the date as "DayOfWeek dayWithSuffix of Month"
         string formattedDate = $"{date:dddd} {dayWithSuffix} of {date:MMMM}";
 
         return formattedDate;

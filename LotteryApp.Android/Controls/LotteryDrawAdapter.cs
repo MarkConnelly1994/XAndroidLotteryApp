@@ -38,33 +38,24 @@ namespace LotteryApp.Android
             {
                 var item = _lotteryDraws[position];
 
-                // Set the date
                 viewHolder.DrawDateTextView.Text = item.DrawDate;
-
-                // Set the draw numbers
                 viewHolder.Number1TextView.Text = item.Number1.ToString();
                 viewHolder.Number2TextView.Text = item.Number2.ToString();
                 viewHolder.Number3TextView.Text = item.Number3.ToString();
                 viewHolder.Number4TextView.Text = item.Number4.ToString();
                 viewHolder.Number5TextView.Text = item.Number5.ToString();
                 viewHolder.Number6TextView.Text = item.Number6.ToString();
-
-                // Set the bonus ball with a label
                 viewHolder.BonusBallTextView.Text = item.BonusBall.ToString();
-
-                // Set the top prize with currency format
                 viewHolder.TopPrizeTextView.Text = $"£{item.TopPrize:n0}";
 
                 // Attach swipe gesture listener to the item view
                 var swipeListener = new OnSwipeTouchListener(_context);
                 swipeListener.OnSwipeLeft += () =>
                 {
-                    // Navigate to the detail page for the swiped item
                     NavigateToDetailPage(item);
                 };
                 viewHolder.ItemView.SetOnTouchListener(swipeListener);
 
-                // Handle item click
                 viewHolder.ItemView.Click += (sender, e) =>
                 {
                     NavigateToDetailPage(item);

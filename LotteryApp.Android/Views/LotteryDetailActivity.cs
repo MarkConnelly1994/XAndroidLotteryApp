@@ -16,7 +16,6 @@ namespace LotteryApp.Android
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_lottery_detail);
 
-            // Get the passed data from the intent
             var drawDate = Intent.GetStringExtra("DrawDate");
             var number1 = Intent.GetStringExtra("Number1");
             var number2 = Intent.GetStringExtra("Number2");
@@ -25,9 +24,8 @@ namespace LotteryApp.Android
             var number5 = Intent.GetStringExtra("Number5");
             var number6 = Intent.GetStringExtra("Number6");
             var bonusBall = Intent.GetStringExtra("BonusBall");
-            var topPrize = Intent.GetLongExtra("TopPrize", 0);
+            var topPrize = Intent.GetStringExtra("TopPrize");
 
-            // Set the values to the TextViews
             FindViewById<TextView>(Resource.Id.drawDateTextView).Text = drawDate;
             FindViewById<TextView>(Resource.Id.number1TextView).Text = number1;
             FindViewById<TextView>(Resource.Id.number2TextView).Text = number2;
