@@ -29,8 +29,10 @@ namespace LotteryApp.Android
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            // Inflate the view.
             var view = inflater.Inflate(Resource.Layout.fragment_lottery_draw, container, false);
 
+            // Find the recycler by ID.
             recyclerView = view.FindViewById<RecyclerView>(Resource.Id.lotteryRecyclerView);
             recyclerView.SetLayoutManager(new LinearLayoutManager(Activity));
 

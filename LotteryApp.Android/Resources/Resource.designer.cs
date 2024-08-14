@@ -4164,6 +4164,9 @@ namespace LotteryApp.Android
 			// aapt resource value: 0x7F0800FD
 			public const int wrap_content = 2131230973;
 			
+			// aapt resource value: 0x7F0800FE
+			public const int yourLotteryTicketTextView = 2131230974;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
