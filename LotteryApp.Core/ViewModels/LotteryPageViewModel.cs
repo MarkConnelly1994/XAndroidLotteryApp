@@ -50,7 +50,6 @@ namespace LotteryApp.Core.ViewModels
                         LotteryDraws.Add(draw);
                     }
 
-                    // Save the data.
                     SaveLotteryDraws();
                 }
                 else
