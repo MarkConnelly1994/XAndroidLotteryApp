@@ -69,6 +69,8 @@
     <Compile Include="Controls\GestureControllers\OnSwipeTouchListener.cs" />
     <Compile Include="Controls\SwipeToDetailCallback.cs" />
     <Compile Include="Views\NumberGeneratorFragment.cs" />
+    <Compile Include="Services\PreferencesService.cs" />
+    <Compile Include="Services\ConnectivityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -124,6 +126,7 @@
     <Folder Include="Controls\" />
     <Folder Include="Views\" />
     <Folder Include="Controls\GestureControllers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />

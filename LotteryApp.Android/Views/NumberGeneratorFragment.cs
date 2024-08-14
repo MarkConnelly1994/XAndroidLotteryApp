@@ -4,8 +4,9 @@ using Android.Widget;
 using AndroidX.Fragment.App;
 using LotteryApp.Core.Models;
 using LotteryApp.Core.Services;
+using LotteryApp.Core.Utils;
+using LotteryApp.Core.Utils.LotteryApp.Core.Utils;
 using LotteryApp.Core.ViewModels;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,11 +19,15 @@ namespace LotteryApp.Android
         private TextView resultTextView;
         private LotteryPageViewModel _viewModel;
 
+
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            var preferencesService = ServiceLocator.Resolve<IPreferencesService>();
+            var connectivityService = ServiceLocator.Resolve<IConnectivityService>();
             var lotteryDataService = new LotteryDataService(Activity);
-            _viewModel = new LotteryPageViewModel(lotteryDataService);
+            _viewModel = new LotteryPageViewModel(lotteryDataService, preferencesService, connectivityService);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -50,8 +55,8 @@ namespace LotteryApp.Android
             // Clear previous numbers
             numberContainer.RemoveAllViews();
 
-            // Generate new random numbers
-            var randomNumbers = GenerateRandomNumbers(7, 1, 59);
+            // Generate new random numbers using shared utility
+            var randomNumbers = LotteryNumberGenerator.GenerateRandomNumbers(7, 1, 59);
 
             // Display the numbers
             foreach (var number in randomNumbers)
@@ -75,46 +80,11 @@ namespace LotteryApp.Android
                 numberContainer.AddView(textView, layoutParams);
             }
 
-            // Compare with lottery data
-            var isWinner = await CompareWithLotteryDataAsync(randomNumbers);
-            resultTextView.Text = isWinner ? "Winner!" : "No wins today";
-        }
-
-        private int[] GenerateRandomNumbers(int count, int min, int max)
-        {
-            var random = new Random();
-            return Enumerable.Range(min, max - min + 1)
-                             .OrderBy(x => random.Next())
-                             .Take(count)
-                             .ToArray();
-        }
-
-        private async Task<bool> CompareWithLotteryDataAsync(int[] generatedNumbers)
-        {
+            // Compare with lottery data using shared ViewModel method
             await _viewModel.LoadLotteryDrawsAsync();
-            var lotteryDraws = _viewModel.LotteryDraws;
+            var isWinner = _viewModel.LotteryDraws.Any(draw => LotteryNumberComparer.AreNumbersMatching(randomNumbers, draw));
 
-            foreach (var draw in lotteryDraws)
-            {
-                var drawNumbers = new[]
-                {
-                    int.Parse(draw.Number1.ToString()),
-                    int.Parse(draw.Number2.ToString()),
-                    int.Parse(draw.Number3.ToString()),
-                    int.Parse(draw.Number4.ToString()),
-                    int.Parse(draw.Number5.ToString()),
-                    int.Parse(draw.Number6.ToString()),
-                    int.Parse(draw.BonusBall.ToString())
-                };
-
-                // Compare generated numbers with draw numbers
-                if (generatedNumbers.OrderBy(n => n).SequenceEqual(drawNumbers.OrderBy(n => n)))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            resultTextView.Text = isWinner ? "Winner!" : "No wins today";
         }
     }
 }

@@ -24,7 +24,9 @@ namespace LotteryApp.Android
         {
             base.OnCreate(savedInstanceState);
             var lotteryDataService = new LotteryDataService(Activity);
-            _viewModel = new LotteryPageViewModel(lotteryDataService);
+            var preferencesService = ServiceLocator.Resolve<IPreferencesService>();
+            var connectivityService = ServiceLocator.Resolve<IConnectivityService>();
+            _viewModel = new LotteryPageViewModel(lotteryDataService, preferencesService, connectivityService);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

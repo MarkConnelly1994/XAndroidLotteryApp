@@ -3,6 +3,8 @@ using Android.OS;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.Fragment.App;
+using LotteryApp.Android.Services;
+using LotteryApp.Core.Services;
 
 namespace LotteryApp.Android
 {
@@ -13,6 +15,15 @@ namespace LotteryApp.Android
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
+            // Register the service and DI for preferences.
+            var preferencesService = new PreferencesService(this);
+            ServiceLocator.Register<IPreferencesService>(preferencesService);
+
+            // Register the servie and DI for connectivity.
+            var connectivityService = new ConnectivityService(this);
+            ServiceLocator.Register<IConnectivityService>(connectivityService);
+
 
             // Set up the toolbar
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
