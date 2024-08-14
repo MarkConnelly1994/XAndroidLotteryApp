@@ -1,167 +1,168 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:layout_margin="16dp"
-	android:padding="16dp"
-	app:cardElevation="4dp"
-	app:cardCornerRadius="8dp"
-	app:cardBackgroundColor="@color/primaryCardColor">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:padding="16dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/primaryCardColor">
 
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:padding="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
-		<TextView
-			android:id="@+id/drawDateTextView"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="18sp"
-			android:textColor="@color/primaryTextColor"
-			android:textStyle="bold"
-			android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/drawDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/primaryTextColor"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
 
-		<TextView
-			android:id="@+id/drawTitleTextView"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="18sp"
-			android:textColor="@color/primaryTextColor"
-			android:textStyle="bold"
-			android:text="Your lottery draw numbers:"
-			android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/drawTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/primaryTextColor"
+            android:textStyle="bold"
+            android:text="@string/draw_title"
+            android:layout_marginTop="8dp" />
 
-		<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:gravity="center">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-			<TextView
-				android:id="@+id/number1TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="1" />
+            <TextView
+                android:id="@+id/number1TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number1" />
 
-			<TextView
-				android:id="@+id/number2TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="2" />
+            <TextView
+                android:id="@+id/number2TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number2" />
 
-			<TextView
-				android:id="@+id/number3TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="3" />
+            <TextView
+                android:id="@+id/number3TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number3" />
 
-			<TextView
-				android:id="@+id/number4TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="4" />
+            <TextView
+                android:id="@+id/number4TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number4" />
 
-			<TextView
-				android:id="@+id/number5TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="5" />
+            <TextView
+                android:id="@+id/number5TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number5" />
 
-			<TextView
-				android:id="@+id/number6TextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="6"/>
-		</LinearLayout>
+            <TextView
+                android:id="@+id/number6TextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/number6" />
+        </LinearLayout>
 
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:layout_marginTop="8dp"
-			android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
 
-			<TextView
-				android:id="@+id/bonusBallTextViewPreface"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/primaryTextColor"
-				android:textSize="18sp"
-				android:text="Bonus Ball: "
-				android:textStyle="bold" />
+            <TextView
+                android:id="@+id/bonusBallTextViewPreface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="18sp"
+                android:text="@string/bonus_ball_preface"
+                android:textStyle="bold" />
 
-			<TextView
-				android:id="@+id/bonusBallTextView"
-				android:layout_width="48dp"
-				android:layout_height="48dp"
-				android:background="@drawable/circle_background"
-				android:gravity="center"
-				android:layout_marginStart="8dp"
-				android:textColor="@android:color/black"
-				android:textSize="16sp"
-				android:text="10"/>
-		</LinearLayout>
+            <TextView
+                android:id="@+id/bonusBallTextView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_red_background"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="@string/bonus_ball" />
+        </LinearLayout>
 
-	<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-			android:layout_marginTop="8dp"
-			android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
 
-			<TextView
-				android:id="@+id/topPrizeTextViewPreface"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/primaryTextColor"
-				android:textSize="18sp"
-				android:text="Top Prize: "
-				android:textStyle="bold" />
+            <TextView
+                android:id="@+id/topPrizeTextViewPreface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="18sp"
+                android:text="@string/top_prize_preface"
+                android:textStyle="bold" />
 
-			<TextView
-			android:id="@+id/topPrizeTextView"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="@color/primaryTextColor"
-			android:textSize="16sp"
-		    android:gravity="center"
-			android:textStyle="italic"
-			android:layout_marginTop="4dp"
-			android:text="Top Prize" />
-		</LinearLayout>
-	</LinearLayout>
+            <TextView
+                android:id="@+id/topPrizeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp"
+                android:text="@string/top_prize" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

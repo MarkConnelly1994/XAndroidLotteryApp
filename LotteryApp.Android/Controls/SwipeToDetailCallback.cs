@@ -25,12 +25,11 @@ namespace LotteryApp.Android
 
         public override void OnSwiped(RecyclerView.ViewHolder viewHolder, int direction)
         {
-            // Handle the swipe: navigate to the details page
+            // Handle the swipe
             var position = viewHolder.AdapterPosition;
             var item = _adapter.GetItem(position);
             NavigateToDetailPage(item);
 
-            // Reset the item's position after the action is triggered
             _adapter.NotifyItemChanged(position);
         }
 
