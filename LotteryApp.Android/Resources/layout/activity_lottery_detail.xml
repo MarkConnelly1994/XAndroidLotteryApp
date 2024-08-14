@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/drawDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/secondaryTextColor"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/number1TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/number2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Number 2" />
+
+    <TextView
+        android:id="@+id/number3TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Number 3" />
+
+    <TextView
+        android:id="@+id/number4TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Number 4" />
+
+    <TextView
+        android:id="@+id/number5TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Number 5" />
+
+    <TextView
+        android:id="@+id/number6TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Number 6" />
+
+    <TextView
+        android:id="@+id/bonusBallTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:text="Bonus Ball" />
+
+    <TextView
+        android:id="@+id/topPrizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:text="Top Prize" />
+
+</LinearLayout>
+

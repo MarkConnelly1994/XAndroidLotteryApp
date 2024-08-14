@@ -1,60 +1,80 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.Content;
 using Android.Views;
-using Android.Widget;
+using AndroidX.RecyclerView.Widget;
 using LotteryApp.Core.Models;
+using System.Collections.Generic;
 
-namespace LotteryApp.Android.Controls
+namespace LotteryApp.Android
 {
-    /// <summary>
-    /// Lottery Adapter class.
-    /// </summary>
-    public class LotteryDrawAdapter : BaseAdapter<LotteryDrawModel>
+    public class LotteryDrawAdapter : RecyclerView.Adapter
     {
-        private readonly Activity _context;
-        private readonly List<LotteryDrawModel> _items;
+        private readonly List<LotteryDrawModel> _lotteryDraws;
+        private readonly Context _context;
 
-        public LotteryDrawAdapter(Activity context, List<LotteryDrawModel> items)
+        public LotteryDrawAdapter(Context context, List<LotteryDrawModel> lotteryDraws)
         {
             _context = context;
-            _items = items;
+            _lotteryDraws = lotteryDraws;
         }
 
-        // Returns the model at the specified position in the list.
-        public override LotteryDrawModel this[int position] => _items[position];
-
-        // Gets the total number of items in list.
-        public override int Count => _items.Count;
-
-        // Returns the unique id for each item.
-        public override long GetItemId(int position) => position;
-
-        /// <summary>
-        /// Gets the view for each item and binds the data to view.
-        /// </summary>
-        /// <param name="position">Position in list.</param>
-        /// <param name="convertView">Convert item</param>
-        /// <param name="parent">Parent</param>
-        /// <returns>View</returns>
-        public override View GetView(int position, View convertView, ViewGroup parent)
+        public LotteryDrawModel GetItem(int position)
         {
-            var view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.lottery_draw_item, parent, false);
+            return _lotteryDraws[position];
+        }
 
-            var drawDateTextView = view.FindViewById<TextView>(Resource.Id.drawDateTextView);
-            var drawNumbersTextView = view.FindViewById<TextView>(Resource.Id.drawNumbersTextView);
-            var topPrizeTextView = view.FindViewById<TextView>(Resource.Id.topPrizeTextView);
+        public void UpdateData(List<LotteryDrawModel> newDraws)
+        {
+            _lotteryDraws.Clear();
+            _lotteryDraws.AddRange(newDraws);
+        }
 
-            var item = _items[position];
+        public override int ItemCount => _lotteryDraws.Count;
 
-            drawDateTextView.Text = item.DrawDate.ToString();
-            drawNumbersTextView.Text = $"{item.Number1}, {item.Number2}, {item.Number3}, {item.Number4}, {item.Number5}, {item.Number6}";
-            topPrizeTextView.Text = $"Top Prize: {item.TopPrize:C}";
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            if (holder is LotteryDrawViewHolder viewHolder)
+            {
+                var item = _lotteryDraws[position];
+                viewHolder.DrawDateTextView.Text = item.DrawDate.ToString();
+                viewHolder.DrawNumbersTextView.Text = $"{item.Number1}, {item.Number2}, {item.Number3}, {item.Number4}, {item.Number5}, {item.Number6}";
+                viewHolder.TopPrizeTextView.Text = $"Top Prize: {item.TopPrize:C}";
 
-            return view;
+                // Attach swipe gesture listener to the item view
+                var swipeListener = new OnSwipeTouchListener(_context);
+                swipeListener.OnSwipeLeft += () =>
+                {
+                    // Navigate to the detail page for the swiped item
+                    NavigateToDetailPage(item);
+                };
+                viewHolder.ItemView.SetOnTouchListener(swipeListener);
+
+                // Handle item click
+                viewHolder.ItemView.Click += (sender, e) =>
+                {
+                    NavigateToDetailPage(item);
+                };
+            }
+        }
+
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            var itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.lottery_draw_item, parent, false);
+            return new LotteryDrawViewHolder(itemView);
+        }
+
+        private void NavigateToDetailPage(LotteryDrawModel draw)
+        {
+            var intent = new Intent(_context, typeof(LotteryDetailActivity));
+            intent.PutExtra("DrawDate", draw.DrawDate.ToString());
+            intent.PutExtra("Number1", draw.Number1.ToString());
+            intent.PutExtra("Number2", draw.Number2.ToString());
+            intent.PutExtra("Number3", draw.Number3.ToString());
+            intent.PutExtra("Number4", draw.Number4.ToString());
+            intent.PutExtra("Number5", draw.Number5.ToString());
+            intent.PutExtra("Number6", draw.Number6.ToString());
+            intent.PutExtra("BonusBall", draw.BonusBall.ToString());
+            intent.PutExtra("TopPrize", draw.TopPrize);
+            _context.StartActivity(intent);
         }
     }
 }
-
-
-
