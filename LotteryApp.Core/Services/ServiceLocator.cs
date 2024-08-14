@@ -20,7 +20,7 @@ namespace LotteryApp.Core.Services
                 var type = typeof(T);
                 if (services.ContainsKey(type))
                 {
-                    services[type] = service;  // Replace existing service
+                    services[type] = service; 
                 }
                 else
                 {
