@@ -20,7 +20,7 @@ namespace LotteryApp.Android
             var preferencesService = new PreferencesService(this);
             ServiceLocator.Register<IPreferencesService>(preferencesService);
 
-            // Register the servie and DI for connectivity.
+            // Register the connectivity service.
             var connectivityService = new ConnectivityService(this);
             ServiceLocator.Register<IConnectivityService>(connectivityService);
 

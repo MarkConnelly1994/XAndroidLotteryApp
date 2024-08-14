@@ -7,6 +7,7 @@ using AndroidX.RecyclerView.Widget;
 using LotteryApp.Core.Models;
 using LotteryApp.Core.Services;
 using LotteryApp.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace LotteryApp.Android
@@ -51,6 +52,8 @@ namespace LotteryApp.Android
             return view;
         }
 
+       
+
         /// <summary>
         /// Get the data from the json file using the viewModel service.
         /// </summary>
@@ -68,7 +71,7 @@ namespace LotteryApp.Android
             }
             else
             {
-                Toast.MakeText(Activity, "No lottery data available", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "No lottery tickets available, please try again.", ToastLength.Short).Show();
             }
         }
     }

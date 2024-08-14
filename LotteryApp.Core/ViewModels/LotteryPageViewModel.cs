@@ -45,6 +45,8 @@ namespace LotteryApp.Core.ViewModels
                     LotteryDraws.Clear();
                     foreach (var draw in draws)
                     {
+                        var date = DateTimeFormatter.FormatDate(draw.DrawDate);
+                        draw.DrawDate = date;
                         LotteryDraws.Add(draw);
                     }
 

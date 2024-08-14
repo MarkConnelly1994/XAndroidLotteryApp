@@ -9,5 +9,6 @@
     <color name="secondaryTextColor">#000000</color>
     <color name="backgroundButtonColor">#9D9B4A</color>
     <color name="primaryButtonTextColor">#FFEE8C</color>
+    <color name="splashBackgroundColor">#9D9B4A</color>
 </resources>
 

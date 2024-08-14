@@ -2,6 +2,7 @@
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
 using LotteryApp.Core.Models;
+using System;
 using System.Collections.Generic;
 
 namespace LotteryApp.Android

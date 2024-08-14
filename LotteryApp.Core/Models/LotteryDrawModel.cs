@@ -19,7 +19,7 @@ namespace LotteryApp.Core.Models
         /// Gets or sets the date of the draw.
         /// </summary>
         [JsonProperty("drawDate")]
-        public DateTime DrawDate { get; set; }
+        public string? DrawDate { get; set; }
 
         /// <summary>
         /// Gets or sets the first drawn number.
