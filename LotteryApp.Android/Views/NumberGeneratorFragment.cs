@@ -20,8 +20,6 @@ namespace LotteryApp.Android
         private TextView resultTextView;
         private LotteryPageViewModel _viewModel;
 
-
-
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

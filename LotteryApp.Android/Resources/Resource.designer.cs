@@ -4639,58 +4639,100 @@ namespace LotteryApp.Android
 			public const int app_name = 2131623964;
 			
 			// aapt resource value: 0x7F0E001E
-			public const int bottom_sheet_behavior = 2131623966;
+			public const int bonus_ball = 2131623966;
 			
 			// aapt resource value: 0x7F0E001F
-			public const int character_counter_content_description = 2131623967;
+			public const int bonus_ball_preface = 2131623967;
 			
 			// aapt resource value: 0x7F0E0020
-			public const int character_counter_pattern = 2131623968;
+			public const int bottom_sheet_behavior = 2131623968;
 			
 			// aapt resource value: 0x7F0E0021
-			public const int copy_toast_msg = 2131623969;
+			public const int buy_new_lottery_card = 2131623969;
 			
 			// aapt resource value: 0x7F0E0022
-			public const int fab_transformation_scrim_behavior = 2131623970;
+			public const int character_counter_content_description = 2131623970;
 			
 			// aapt resource value: 0x7F0E0023
-			public const int fab_transformation_sheet_behavior = 2131623971;
+			public const int character_counter_pattern = 2131623971;
 			
 			// aapt resource value: 0x7F0E0024
-			public const int fallback_menu_item_copy_link = 2131623972;
+			public const int copy_toast_msg = 2131623972;
 			
 			// aapt resource value: 0x7F0E0025
-			public const int fallback_menu_item_open_in_browser = 2131623973;
+			public const int draw_title = 2131623973;
 			
 			// aapt resource value: 0x7F0E0026
-			public const int fallback_menu_item_share_link = 2131623974;
+			public const int fab_transformation_scrim_behavior = 2131623974;
 			
 			// aapt resource value: 0x7F0E0027
-			public const int hide_bottom_view_on_scroll_behavior = 2131623975;
+			public const int fab_transformation_sheet_behavior = 2131623975;
 			
 			// aapt resource value: 0x7F0E0028
-			public const int mtrl_chip_close_icon_content_description = 2131623976;
+			public const int fallback_menu_item_copy_link = 2131623976;
 			
 			// aapt resource value: 0x7F0E0029
-			public const int password_toggle_content_description = 2131623977;
+			public const int fallback_menu_item_open_in_browser = 2131623977;
 			
 			// aapt resource value: 0x7F0E002A
-			public const int path_password_eye = 2131623978;
+			public const int fallback_menu_item_share_link = 2131623978;
 			
 			// aapt resource value: 0x7F0E002B
-			public const int path_password_eye_mask_strike_through = 2131623979;
+			public const int hide_bottom_view_on_scroll_behavior = 2131623979;
 			
 			// aapt resource value: 0x7F0E002C
-			public const int path_password_eye_mask_visible = 2131623980;
+			public const int mtrl_chip_close_icon_content_description = 2131623980;
 			
 			// aapt resource value: 0x7F0E002D
-			public const int path_password_strike_through = 2131623981;
+			public const int number1 = 2131623981;
 			
 			// aapt resource value: 0x7F0E002E
-			public const int search_menu_title = 2131623982;
+			public const int number2 = 2131623982;
 			
 			// aapt resource value: 0x7F0E002F
-			public const int status_bar_notification_info_overflow = 2131623983;
+			public const int number3 = 2131623983;
+			
+			// aapt resource value: 0x7F0E0030
+			public const int number4 = 2131623984;
+			
+			// aapt resource value: 0x7F0E0031
+			public const int number5 = 2131623985;
+			
+			// aapt resource value: 0x7F0E0032
+			public const int number6 = 2131623986;
+			
+			// aapt resource value: 0x7F0E0033
+			public const int password_toggle_content_description = 2131623987;
+			
+			// aapt resource value: 0x7F0E0034
+			public const int path_password_eye = 2131623988;
+			
+			// aapt resource value: 0x7F0E0035
+			public const int path_password_eye_mask_strike_through = 2131623989;
+			
+			// aapt resource value: 0x7F0E0036
+			public const int path_password_eye_mask_visible = 2131623990;
+			
+			// aapt resource value: 0x7F0E0037
+			public const int path_password_strike_through = 2131623991;
+			
+			// aapt resource value: 0x7F0E0038
+			public const int result = 2131623992;
+			
+			// aapt resource value: 0x7F0E0039
+			public const int search_menu_title = 2131623993;
+			
+			// aapt resource value: 0x7F0E003A
+			public const int status_bar_notification_info_overflow = 2131623994;
+			
+			// aapt resource value: 0x7F0E003B
+			public const int top_prize = 2131623995;
+			
+			// aapt resource value: 0x7F0E003C
+			public const int top_prize_preface = 2131623996;
+			
+			// aapt resource value: 0x7F0E003D
+			public const int your_lottery_ticket = 2131623997;
 			
 			static String()
 			{
