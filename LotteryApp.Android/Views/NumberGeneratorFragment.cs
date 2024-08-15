@@ -114,6 +114,7 @@ namespace LotteryApp.Android
             var isWinner = _viewModel.LotteryDraws.Any(draw => LotteryNumberComparer.AreNumbersMatching(randomNumbers, draw));
 
             resultTextView.Text = isWinner ? "Winner!" : "No wins today";
+            resultTextView.SetTextColor(isWinner ? Context.GetColorStateList(Resource.Color.winnerTextColor) : Context.GetColorStateList(Resource.Color.loserTextColor));
         }
     }
 }
