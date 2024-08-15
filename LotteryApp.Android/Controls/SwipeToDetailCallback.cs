@@ -59,7 +59,7 @@ namespace LotteryApp.Android
             intent.PutExtra("Number5", draw.Number5.ToString());
             intent.PutExtra("Number6", draw.Number6.ToString());
             intent.PutExtra("BonusBall", draw.BonusBall.ToString());
-            intent.PutExtra("TopPrize", draw.TopPrize);
+            intent.PutExtra("TopPrize", draw.TopPrize.ToString());
             _context.StartActivity(intent);
         }
     }
