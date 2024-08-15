@@ -13,7 +13,7 @@ A cross-platform lottery application built using Xamarin Native (iOS and Android
 
 ## Context
 
-Hi Mkodo, thank you for giving me the opportunity to do this take home challenge. I did this throughout the day sporadically whilst on holiday on the 14th of August. I feel that I have met most of the brief.
+Hi Mkodo, thank you for giving me the opportunity to complete this take home challenge. I worked on this task throughout the day sporadically whilst on holiday on the 14th of August. I feel that I have met most of the brief.
 Please use the master branch.
 
 **Essential** 
@@ -33,7 +33,7 @@ Please use the master branch.
 
 **Is there anything more I could do?** 
 Yes. I had limited time on this due to being on holiday but here's a list of what I would have added.
-1. Integration tests - I did add the NUnit project for Android but this was eating into my time to get this to work, as I mentioned I have limited experience but I am hungry to learn. I had to pivot onto other parts of the brief.
+1. Integration tests - I did add the NUnit project for Android. As I mentioned I have limited experience writing integration tests in Xamarin Native, and there was limited documentation online due to the age of the language, and the various updates to frameworks that have happened over the years. I am confident that given my existing knowledge, I will easily be able to learn how to add integration tests with some guidance. I am eager to learn how to do this, but given the time constraints surrounding this task and my current circumstances, I chose to prioritise other parts of the brief to showcase my other skills. I felt the unit test coverage I added was sufficient to forgo the integration tests in this instance.
 2. Unit Tests - I would add more unit tests to improve code coverage of the whole app.
 3. Exception Handling - I would like to add more exception handling around the parsing of the data.
 4. Error screens - Ontop of exception handling I would also add error screens, for example, no connectivity and no data would have an empty view with "No lottery tickets available".
