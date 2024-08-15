@@ -46,7 +46,7 @@ Yes. I had limited time on this due to being on holiday but here's a list of wha
 
 ## Features
 
-- **Cross-Platform:** Runs on both iOS and Android using Xamarin Native.
+- **Cross-Platform:** Runs on Android using Xamarin Native.
 - **Lottery Number Generation:** Randomly generates lottery numbers.
 - **Lottery Results Checking:** Allows users to compare their numbers with the drawn numbers.
 - **Detailed Draw Information:** Provides information on the draw date, winning numbers, and top prizes.
