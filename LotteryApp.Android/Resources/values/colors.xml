@@ -10,5 +10,7 @@
     <color name="backgroundButtonColor">#9D9B4A</color>
     <color name="primaryButtonTextColor">#FFEE8C</color>
     <color name="splashBackgroundColor">#9D9B4A</color>
+    <color name="winnerTextColor">#008000</color>
+    <color name="loserTextColor">#FF0000</color>
 </resources>
 

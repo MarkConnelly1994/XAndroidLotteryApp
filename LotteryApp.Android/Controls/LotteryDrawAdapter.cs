@@ -27,7 +27,7 @@ namespace LotteryApp.Android
         {
             _lotteryDraws.Clear();
             _lotteryDraws.AddRange(newDraws);
-            NotifyDataSetChanged();  // Ensure the RecyclerView is updated when data changes
+            NotifyDataSetChanged();
         }
 
         public override int ItemCount => _lotteryDraws.Count;
@@ -46,7 +46,7 @@ namespace LotteryApp.Android
                 viewHolder.Number5TextView.Text = item.Number5.ToString();
                 viewHolder.Number6TextView.Text = item.Number6.ToString();
                 viewHolder.BonusBallTextView.Text = item.BonusBall.ToString();
-                viewHolder.TopPrizeTextView.Text = $"£{item.TopPrize:n0}";
+                viewHolder.TopPrizeTextView.Text = $"£{item.TopPrize:n0}".ToString();
 
                 // Attach swipe gesture listener to the item view
                 var swipeListener = new OnSwipeTouchListener(_context);
